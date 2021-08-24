@@ -35,6 +35,11 @@ auto classifyObbFrustum(OrientedBoundingBox* obb, std::array<Vector4d, 6> planes
 	return result;
 }
 
+#pragma push_macro("near")
+#pragma push_macro("far")
+#undef near
+#undef far
+
 Matrix4d perspective (double fov_rad, double aspect_ratio, double near, double far)
 {
     assert(aspect_ratio > 0);
@@ -50,6 +55,9 @@ Matrix4d perspective (double fov_rad, double aspect_ratio, double near, double f
     res(2,3) = - (2.0 * far * near) / (far - near);
     return res;
 }
+
+#pragma pop_macro ("near")
+#pragma pop_macro ("far")
 
 Matrix4d lookAt(Vector3d eye, Vector3d center, Vector3d up) {
 
