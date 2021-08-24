@@ -9,7 +9,7 @@
 //   If CRND_HEADER_FILE_ONLY is NOT defined, the implementation is included.
 
 // Define PLATFORM_NACL if compiling under native client.
-#define PLATFORM_NACL
+// #define PLATFORM_NACL
 
 #ifndef CRND_INCLUDE_CRND_H
 #define CRND_INCLUDE_CRND_H
